@@ -5,7 +5,7 @@ class Node:
 
 
 def findModulusNode(head, k):
-    i = 0
+    i = 1
     modulus_node = None
     while head:
         if i % k == 0:
