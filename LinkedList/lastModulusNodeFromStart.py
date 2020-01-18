@@ -6,6 +6,9 @@ class Node:
 
 def findModulusNode(head, k):
     i = 1
+    if k <= 0:
+        return None
+        
     modulus_node = None
     while head:
         if i % k == 0:
