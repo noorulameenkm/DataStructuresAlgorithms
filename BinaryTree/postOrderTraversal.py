@@ -6,6 +6,11 @@ class Node:
         self.left = None
         self.right = None
 
+def getSeek(stack):
+    if len(stack) > 0:
+        return stack[0]
+    
+    return None
 
 def recursivePostOrder(root):
     if root:
@@ -38,7 +43,57 @@ def iterativePostOrder(root):
     print('\n', end='')
     return
 
+def iterativePostOrderWithOneStack(root):
+    if not root:
+        return root
+
+    stack = []
+    while True:
+        while root:
+            if root.right:
+                stack.insert(0, root.right)
+            stack.insert(0, root)
+            root = root.left
+
+        if len(stack) <= 0:
+            break
         
+        root = stack.pop(0)
+
+        if root.right and root.right == getSeek(stack):
+            stack.pop(0)
+            stack.insert(0, root)
+            root = root.right            
+        
+        else:
+            print(root.data, end=' ')
+            root = None
+    
+    print('\n', end='')
+
+def anotherIterativePostOrderWithOneStack(root):
+    if not root:
+        return root
+    
+    stack = []
+    while True:
+        while root:
+            stack.insert(0, root)
+            stack.insert(0, root)
+            root = root.left
+
+        
+        if len(stack) <= 0:
+            break
+        
+        root = stack.pop(0)
+        if root == getSeek(stack):
+            root = root.right
+        
+        else:
+            print(root.data, end=' ')
+            root = None
+
 
 
 if __name__ == '__main__':
@@ -54,3 +109,7 @@ if __name__ == '__main__':
     recursivePostOrder(root)
     print('\nIterative postOrder Results')
     iterativePostOrder(root)
+    print('Iterative PostOrder Traversal with one stack')
+    iterativePostOrderWithOneStack(root)
+    print('Another Iterative PostOrder Traversal with one stack')
+    anotherIterativePostOrderWithOneStack(root)
