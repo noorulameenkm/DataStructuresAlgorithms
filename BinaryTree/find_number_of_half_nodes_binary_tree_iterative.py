@@ -33,7 +33,7 @@ def Main():
     root.left.left = Node(5)
     root.left.right = Node(6)
     root.right.left = Node(11)
-    root.right.right = Node(12)
+    # root.right.right = Node(12)
     root.left.left.left = Node(21)
     root.left.left.right = Node(20)
     root.left.right.left = Node(61)
