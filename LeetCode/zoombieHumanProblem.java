@@ -19,6 +19,8 @@ public class zoombieHumanProblem {
         int[][] grid = {{0, 0, 1, 0, 1},{0, 0, 0, 1, 0},{0, 0, 0, 0, 1},{0, 1, 0, 0, 0}};
         int hours = findNumberOfHours(grid);
         System.out.println(hours);
+        int sHours = findNumberOfHoursSecond(grid);
+        System.out.println(sHours);
     }
 
     static int findNumberOfHours(int[][] grid){
@@ -43,7 +45,7 @@ public class zoombieHumanProblem {
         int hours;
         for(hours = 0; hours >= 0 && humans.size() > 0; hours++){
             int qSize = humans.size();
-            for(int s = 0; s < qSize; s++){
+            for(int s = 0; s < qSize && humans.size() > 0; s++){
                 Location loc = humans.remove();
                 Boolean visited = false;
                 String key;
@@ -93,6 +95,46 @@ public class zoombieHumanProblem {
             }
         }
         return hours;
+    }
+    
+    
+    static int findNumberOfHoursSecond(int[][] grid){
+        Queue<Location> q = new LinkedList<>();
+        int row = grid.length, col = grid[0].length;
+        int target = row * col;
+        int zombies = 0, hours = 0;
+        for(int i=0;i<grid.length;i++) {
+            for(int j=0;j<grid[0].length;j++) {
+                if(grid[i][j] == 1) {
+                    q.offer(new Location(i,j));
+                    zombies++;
+                }
+            }
+        }
+        int[][] dirs = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+        while(!q.isEmpty()) {
+            int size = q.size();
+            if(zombies == target)
+                return hours;
+            for(int i=0;i<size;i++) {
+                Location cur = q.poll();
+                for(int[] dir : dirs) {
+                    int ni = cur.row + dir[0];
+                    int nj = cur.col + dir[1];
+                    if(isValid(ni, nj, row, col) && isHuman(ni, nj, grid)) {
+                        zombies++;
+                        q.offer(new Location(ni, nj));
+                        grid[ni][nj] = 1;
+                    }
+                }
+            }
+            hours++;
+        }
+        return -1;
+    }
+
+    static Boolean isHuman(int row, int col, int[][] grid){
+        return grid[row][col] == 0;
     }
 
     static Boolean isValid(int locRow, int locCol, int row, int col){
