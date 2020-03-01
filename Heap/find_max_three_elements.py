@@ -1,6 +1,6 @@
 import math
 
-def heapify(array, n):
+def insert(array, n):
     temp = array[n]
     i = n
     while i > 1 and temp > array[math.floor(i/2)]:
@@ -13,7 +13,7 @@ def createHeapFromArray(array):
     # Make the zero'th position None
     array.insert(0, None)
     for i in range(2, len(array)):
-        heapify(array, i)
+        insert(array, i)
     
 
 
