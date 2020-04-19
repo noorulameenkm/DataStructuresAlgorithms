@@ -1,6 +1,6 @@
 from node import Node
 
-
+# finding an element
 def findAnElement(root, el):
     
     while root:
