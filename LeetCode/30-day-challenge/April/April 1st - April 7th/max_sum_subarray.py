@@ -15,4 +15,6 @@ class Solution:
 
 nums = [-2,1,-3,4,-1,2,1,-5,4]
 print(f'Solutions is {Solution().maxSubArray(nums)}')
+nums_2 = [-1, -2, -3, -4]
+print(f'Second Solution is {Solution().maxSubArray(nums_2)}')
         
