@@ -13,6 +13,7 @@ def min_meeting_rooms(meetings):
   meetings.sort(key=lambda x: x.start)
 
   minRooms = 0
+  # to store all the active meetings
   minHeap = []
   for meeting in meetings:
 
