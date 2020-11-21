@@ -1,5 +1,10 @@
 from collections import deque
 
+"""
+Time Complexity - O(N * N!)
+Space Complexity - O(N * N!)
+"""
+
 def find_permutations(nums):
   result = []
   numsLength = len(nums)

@@ -1,6 +1,10 @@
+
+"""
+ Time Complexity - O(N * 2^N)
+ Space Complexity - O(N * 2^N)
+"""
 def find_subsets(nums):
   subsets = []
-  # TODO: Write your code here
   subsets.append([])
   nums = sorted(nums)
   startIndex, endIndex = 0, 0

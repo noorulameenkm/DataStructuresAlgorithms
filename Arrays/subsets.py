@@ -1,3 +1,7 @@
+"""
+ Time Complexity - O(N * 2^N)
+ Space Complexity - O(N * 2^N)
+"""
 
 def subsets(nums):
     subsets_ = [[]]
