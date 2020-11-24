@@ -44,7 +44,7 @@ def main():
   root.left = TreeNode(7)
   root.right = TreeNode(1)
   root.left.left = TreeNode(4)
-  root.right.left = TreeNode(10)
+  root.right.left = TreeNode(11)
   root.right.right = TreeNode(5)
   print("Max sum path from root to leaf" +
         ": " + str(findMaxPath(root)))
