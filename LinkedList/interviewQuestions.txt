@@ -1,0 +1,14 @@
+1. Reverse a LinkedList
+2. Remove the N-th node from the end of the LinkedList
+3. Find the middle of the LinkedList
+4. Merge two sorted linked lists
+5. Delete a node when the address of node is given
+6. Add two numbers given as Linked list
+7. Find the intersection point of two linked lists.
+8. Detect a Cycle in Linked List
+9. Check for Palindromic Linked List
+10. Reverse Nodes in K-groups size
+11. Finding the starting point of the Linked List
+12. Flattening of a Linked List
+13. Rotate a Linked List by K places
+14. Clone a Linked List by next and random pointers
