@@ -59,8 +59,8 @@ def countUniquePaths3(dp, i, j, m, n):
 
 
 def findUniquePaths4(m, n):
-    N = m + n - 2
-    R = m - 1
+    N = m + n - 2 # (m - 1 movement right side and n - 1 movements down) -> total movements to reach the destination
+    R = m - 1 # Out of the total movements m - 1 movements is towards right
 
     res = 1.0
     for i in range(1, R + 1):

@@ -72,6 +72,33 @@ def checkPalindrome(head):
     
     return isPalindrome(head1, reverseList(head2))
 
+
+def isPalindrome2(head):
+    if not head:
+        return True
+
+    slow = fast = head
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+    
+    reversed_ = None
+    if fast is None:
+        reversed_ = reverseList(slow)
+    else:
+        reversed_ = reverseList(slow.next)
+    
+    first, second = head, reversed_
+    while second is not None:
+        if second.val != first.val:
+            return False
+        
+        first = first.next
+        second = second.next
+    
+    return True
+
+
 if __name__ == '__main__':
     head = Node('M')
     head.next = Node('A')
@@ -90,10 +117,13 @@ if __name__ == '__main__':
     head2.next.next = Node(2)
     head2.next.next.next = Node(1)
 
-    printLinkedList(head2)
-    if checkPalindrome(head2):
-        print('IT IS PALINDROME')
-    else:
-        print('IT IS NOT PALINDROME')
+    # printLinkedList(head2)
+    # if checkPalindrome(head2):
+    #     print('IT IS PALINDROME')
+    # else:
+    #     print('IT IS NOT PALINDROME')
+    # print(checkPalindrome(head2))
+    print(isPalindrome2(head2))
+
 
     

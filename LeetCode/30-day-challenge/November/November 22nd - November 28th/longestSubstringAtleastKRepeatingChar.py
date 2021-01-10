@@ -31,5 +31,4 @@ def main():
     print(Solution().longestSubstring("aaabb", 3))
     print(Solution().longestSubstring("ababbc", 2))
 
-
 main()

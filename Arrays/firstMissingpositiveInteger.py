@@ -36,6 +36,8 @@ def main():
     print(firstMissingPositive([1,2,0]))
     print(firstMissingPositive([3,4,-1,1]))
     print(firstMissingPositive([-8,-7,-6]))
+    print(firstMissingPositive([1, 1000]))
+    print(firstMissingPositive([0, 1, 2]))
 
 
 main()
