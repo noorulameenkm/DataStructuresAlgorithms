@@ -48,6 +48,26 @@ class Solution:
         return len(A)
 
 
+def removeDuplicates3(nums):
+  return len(set(nums))
+
+
+def removeDuplicates4(nums):
+  n = len(nums)
+  if n <= 1:
+    return n
+
+  j, i = 0, 1
+  while i < n:
+    if nums[i] != nums[j]:
+      j += 1
+      nums[j] = nums[i]
+    
+    i += 1
+  
+  return j + 1
+
+
 
 print(remove_duplicates([2, 3, 3, 3, 6, 9, 9]))
 print(remove_duplicates([2, 2, 2, 11]))
@@ -55,3 +75,7 @@ print(remove_duplicates2([2, 3, 3, 3, 6, 9, 9]))
 print(remove_duplicates2([2, 2, 2, 11]))
 print(Solution().removeDuplicates([2, 3, 3, 3, 6, 9, 9]))
 print(Solution().removeDuplicates([2, 2, 2, 11]))
+print(removeDuplicates3([2, 3, 3, 3, 6, 9, 9]))
+print(removeDuplicates3([2, 2, 2, 11]))
+print(removeDuplicates4([2, 3, 3, 3, 6, 9, 9]))
+print(removeDuplicates4([2, 2, 2, 11]))

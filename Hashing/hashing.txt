@@ -1,0 +1,8 @@
+* Methods:- 
+    -> Linear Probing (collision handled by taking next index using a fixed offset)
+    -> Chaining (collision can be handled by linkedlist)
+    -> Resizing the list -> (Collision can be handled by resizing the list by using threshold)
+    -> quadratic probing,
+    -> bucket method, 
+    -> random probing, and 
+    -> key rehashing

@@ -6,6 +6,9 @@ def inertionSort(arr):
             k -= 1
 
 
+"""
+Time complexity - O(n ^ 2)
+"""
 def insetionSort2(arr):
     for i in range(1, len(arr)):
         key = arr[i]

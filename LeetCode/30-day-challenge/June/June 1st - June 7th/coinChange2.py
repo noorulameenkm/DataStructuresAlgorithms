@@ -13,3 +13,4 @@ class Solution:
 
 
 print(f'Solution for amount = 5, coins = [1, 2, 5] is {Solution().change(5, [1, 2, 5])}')
+print(f'Solution for amount = 11, coins = [1, 2, 5] is {Solution().change(11, [1, 2, 5])}')

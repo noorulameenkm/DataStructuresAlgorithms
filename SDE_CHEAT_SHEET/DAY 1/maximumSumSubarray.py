@@ -49,6 +49,23 @@ def maximum_sum_subarray4(nums):
     
     return max_
 
+def find_max_sum_subarray_5(lst): 
+  if (len(lst) < 1): 
+    return 0
+
+  curr_max = lst[0]
+  global_max = lst[0]
+  length_array = len(lst)
+  for i in range(1, length_array):
+    if curr_max < 0: 
+      curr_max = lst[i]
+    else:
+      curr_max += lst[i]
+    if global_max < curr_max:
+      global_max = curr_max
+
+  return global_max
+
 
 
 
@@ -84,6 +101,14 @@ def main():
     print(maximum_sum_subarray4(nums))
     nums = [-2, -3, 4, -1, -2, 1, 5, -3]
     print(maximum_sum_subarray4(nums))
+
+    # Fifth Approach
+    nums = [-2,1,-3,4,-1,2,1,-5,4]
+    print(find_max_sum_subarray_5(nums))
+    nums = [-1, -2, -3, -4]
+    print(find_max_sum_subarray_5(nums))
+    nums = [-2, -3, 4, -1, -2, 1, 5, -3]
+    print(find_max_sum_subarray_5(nums))
     
 
 main()
