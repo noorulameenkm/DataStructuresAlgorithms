@@ -5,6 +5,11 @@ class Abbreviation:
     self.start = start
     self.count = count
 
+
+"""
+    Time complexity:- O(N * 2^N)
+    Space complexity:- O(N * 2^N)
+"""
 def generate_generalized_abbreviation(word):
   result = []
   # TODO: Write your code here
@@ -81,4 +86,24 @@ def main():
 
 
 main()
+
+
+
+"""
+This problem follows the Subsets pattern and can be mapped to Balanced Parentheses. We can follow a similar BFS approach.
+
+Let’s take Example-1 mentioned above to generate all unique generalized abbreviations. Following a BFS approach, we will abbreviate one character at a time. At each step we have two options:
+
+ - Abbreviate the current character, or
+ - Add the current character to the output and skip abbreviation.
+
+Following these two rules, let’s abbreviate BAT:
+ 1. Start with an empty word: “”
+ 2. At every step, we will take all the combinations from the previous step and apply the two abbreviation rules to the next character.
+ 3. Take the empty word from the previous step and add the first character to it. We can either abbreviate the character or add it (by skipping abbreviation). This gives us two new words: _, B.
+ 4. In the next iteration, let’s add the second character. Applying the two rules on _ will give us _ _ and 1A. Applying the above rules to the other combination B gives us B_ and BA.
+ 5. The next iteration will give us: _ _ _, 2T, 1A_, 1AT, B _ _, B1T, BA_, BAT
+ 6. The final iteration will give us:3, 2T, 1A1, 1AT, B2, B1T, BA1, BAT
+"""
+
 

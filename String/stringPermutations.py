@@ -1,4 +1,11 @@
 from collections import deque
+
+
+"""
+Time complexity - O(N * 2 ^ N)
+Space Complexity - O(N * 2 ^ N)
+"""
+
 def find_letter_case_string_permutations(str1):
   permutations = []
   queue = deque()

@@ -44,9 +44,17 @@ def find_unique_trees_(start, end):
   return result
 
 
+
 def main():
-  print("Total trees: " + str(len(find_unique_trees(2))))
-  print("Total trees: " + str(len(find_unique_trees(3))))
+  print("Total trees: " + str(find_unique_trees(2)))
+  print("Total trees: " + str(find_unique_trees(3)))
 
 
 main()
+
+
+"""
+This problem follows the Subsets pattern and is quite similar to Evaluate Expression. Following a similar approach, we can iterate from 1 to ‘n’ and consider each number as the root of a tree. All smaller numbers will make up the left sub-tree and bigger numbers will make up the right sub-tree. 
+We will make recursive calls for the left and right sub-trees
+"""
+

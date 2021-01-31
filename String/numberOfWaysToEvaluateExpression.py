@@ -72,3 +72,16 @@ def main():
 
 
 main()
+
+
+
+"""
+Approach
+
+This problem follows the Subsets pattern and can be mapped to Balanced Parentheses. We can follow a similar BFS approach.
+Let’s take Example-1 mentioned above to generate different ways to evaluate the expression.
+1. We can iterate through the expression character-by-character.
+2. we can break the expression into two halves whenever we get an operator (+, -, *).
+3. The two parts can be calculated by recursively calling the function.
+4. Once we have the evaluation results from the left and right halves, we can combine them to produce all results.
+"""

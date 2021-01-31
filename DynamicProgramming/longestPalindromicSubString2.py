@@ -58,7 +58,7 @@ def longestPalindromicSubstring2(str_):
         low = i - 1
         high = i
 
-        while i >= 0 and high < n and str_[low] == str_[high]:
+        while low >= 0 and high < n and str_[low] == str_[high]:
             if high - low + 1 > maxlength:
                 maxlength = high - low + 1
                 start = low
