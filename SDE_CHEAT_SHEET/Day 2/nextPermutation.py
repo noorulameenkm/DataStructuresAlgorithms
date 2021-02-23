@@ -65,5 +65,8 @@ def main():
     nums = [1,2,3,4]
     Solution().nextPermutation(nums)
     print(f'Next Permutation of [1, 2, 3, 4] is {nums}')
+    nums = [1, 2, 4, 3]
+    Solution().nextPermutation(nums)
+    print(f'Next Permutation of [1, 2, 4, 3] is {nums}')
 
 main()

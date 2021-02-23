@@ -1,5 +1,10 @@
 from math import factorial
 
+
+"""
+Time Complexity - O(N^2)
+Space Complexity - O(N^2)
+"""
 class Solution:
     def generate(self, numRows):
         result = []

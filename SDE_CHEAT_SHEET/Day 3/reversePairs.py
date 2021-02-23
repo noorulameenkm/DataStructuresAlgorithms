@@ -1,3 +1,7 @@
+"""
+Time Complexity - O(nlogn + n + n)
+Space Complexity - O(n)
+"""
 def merge(nums, temp, start1, start2, end):
     count = 0
     j = start2

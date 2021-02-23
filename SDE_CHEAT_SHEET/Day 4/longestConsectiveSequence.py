@@ -35,7 +35,9 @@ def longestConsectiveSequence2(nums):
             while num + 1 in hashSet:
                 length += 1
                 num = num + 1
-        
+
+            maxLength = max(length, maxLength)
+                
     maxLength = max(length, maxLength)
 
 
@@ -51,6 +53,7 @@ def main():
     print(longestConsectiveSequence([1,2,0,1]))
 
     # Method 2
+    print(longestConsectiveSequence2([100,4,199,198,200,201,202,1, 3,2]))
     print(longestConsectiveSequence2([100,4,200,1,3,2]))
     print(longestConsectiveSequence2([0,3,7,2,5,8,4,6,0,1]))
     print(longestConsectiveSequence2([1,2,0,1]))

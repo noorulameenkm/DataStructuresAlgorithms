@@ -22,7 +22,9 @@ def numberOfSubArrays2(nums, xor):
         if xorValue == xor:
             count += 1
         
-        y = xorValue ^ xor
+        # y ^ xor = xorValue ==> y = xorValue ^ xor;;; y = xor of sum sub array;;; xor is the required xor (assume it exist on one subarray)
+
+        y = xorValue ^ xor # xorValue is the xor of all elements till this index i, there will be a 'y' xor and required 'xor' if you do xor of both you will get xor till this index
         if y in hashMap:
             count += hashMap[y]
         
