@@ -25,6 +25,32 @@ def find_permutations(nums):
   return result
 
 
+"""
+ Time Complexity - O(2^N)
+"""
+def permutations(l):
+      def dfs(path, used, res):
+            if len(path) == len(l):
+                  res.append(path[:])
+                  return
+            
+            for i in range(len(l)):
+                  if used[i]:
+                        continue
+                  
+                  path.append(l[i])
+                  used[i] = True
+                  dfs(path, used, res)
+                  path.pop()
+                  used[i] = False
+
+      res = []
+      dfs([], [False] * len(l), res)
+      return res
+
+
+
+
 def main():
   print("Here are all the permutations: " + str(find_permutations([1, 3, 5])))
 
