@@ -10,7 +10,7 @@ class Solution:
         
         dp = [[-1 for _ in range(n)] for _ in range(n)]
         
-        return solve(0, n- 1, sum_, stones, dp)
+        return solve(0, n - 1, sum_, stones, dp)
     
 
 def solve(left, right, sum_, stones, dp):
