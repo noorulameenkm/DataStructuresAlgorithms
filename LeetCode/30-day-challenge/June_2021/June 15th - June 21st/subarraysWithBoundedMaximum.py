@@ -1,5 +1,9 @@
 from math import inf
 
+"""
+Problem Link:- https://leetcode.com/problems/number-of-subarrays-with-bounded-maximum/
+"""
+
 def subarrays_with_bounded_maximum(arr, left, right):
     count = 0
     for i in range(len(arr)):
