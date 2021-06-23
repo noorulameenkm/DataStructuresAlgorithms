@@ -1,3 +1,7 @@
+"""
+Problem Link:- https://leetcode.com/problems/k-inverse-pairs-array/
+"""
+
 class Solution:
     def kInversePairs(self, n, k):
         max_possible_inversions = (n * (n-1)//2)
