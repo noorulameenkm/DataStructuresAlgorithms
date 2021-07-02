@@ -1,3 +1,7 @@
+"""
+    Problem Link:- https://leetcode.com/problems/find-k-closest-elements/
+"""
+
 from heapq import *
 
 
@@ -13,6 +17,9 @@ class Element:
         return self.diff > other.diff
 
 
+"""
+ Time Complexity - (NlogN)
+"""
 def find_k_closest_elements(arr, k, x):
     
     results = []
@@ -32,6 +39,9 @@ def find_k_closest_elements(arr, k, x):
     return results
 
 
+"""
+ Time Complexity - O(N), N - length of the arr
+"""
 def find_k_closest_elements_2(arr, k, x):
     results = []
 
