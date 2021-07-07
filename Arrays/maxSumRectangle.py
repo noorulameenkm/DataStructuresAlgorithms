@@ -32,7 +32,7 @@ def kadanes(arr):
     return max_start, max_end, max_sum
 
 """
-    Time Complexity - O(N^2M)
+    Time Complexity - O(N^2 M)
     Space Complexity - O(M)
 """
 def find_max_sum_rectangle(matrix):
