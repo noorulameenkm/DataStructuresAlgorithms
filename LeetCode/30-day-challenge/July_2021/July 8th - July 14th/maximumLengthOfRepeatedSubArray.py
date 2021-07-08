@@ -55,6 +55,19 @@ def find_length_2(nums1, nums2):
     return find_length_recursive_memoization(nums1, nums2, 0, 0, len(nums1), len(nums2), memory)
 
 
+def find_length_tabulation(nums1, nums2):
+    n, m = len(nums1), len(nums2)
+
+    dp = [[0 for _ in range(n + 1)] for _ in range(m + 1)]
+    max_ = 0
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            if nums2[i - 1] == nums1[j - 1]:
+                dp[i][j] = 1 + dp[i - 1][j - 1]
+                max_ = max(max_, dp[i][j])
+
+    return max_
+
 
 print(find_length(nums1 = [1,2,3,2,1], nums2 = [3,2,1,4,7]))
 print(find_length(nums1 = [0,0,0,0,0], nums2 = [0,0,0,0,0]))
@@ -62,3 +75,7 @@ print(find_length(nums1 = [0,0,0,0,0], nums2 = [0,0,0,0,0]))
 
 print(find_length_2(nums1 = [1,2,3,2,1], nums2 = [3,2,1,4,7]))
 print(find_length_2(nums1 = [0,0,0,0,0], nums2 = [0,0,0,0,0]))
+
+
+print(find_length_tabulation(nums1 = [1,2,3,2,1], nums2 = [3,2,1,4,7]))
+print(find_length_tabulation(nums1 = [0,0,0,0,0], nums2 = [0,0,0,0,0]))
