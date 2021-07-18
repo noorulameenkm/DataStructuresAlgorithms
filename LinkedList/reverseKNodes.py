@@ -87,6 +87,8 @@ if __name__ == '__main__':
     head.next.next.next.next.next = Node(6)
     head.next.next.next.next.next.next = Node(7)
     head.next.next.next.next.next.next.next = Node(8)
+    head.next.next.next.next.next.next.next.next = Node(9)
+    head.next.next.next.next.next.next.next.next.next = Node(10)
     printLinkedList(head)
     head = Main(head, 4)
     printLinkedList(head)
