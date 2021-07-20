@@ -1,5 +1,6 @@
 """
     Problem Link:- https://leetcode.com/problems/shuffle-an-array/
+    Algorithm:- Fisher–Yates shuffle
 """
 
 import random
