@@ -1,0 +1,14 @@
+[flake8]
+max-complexity = 36
+max-line-length = 99
+max-function-length = 937
+max-parameters-amount = 38
+max-returns-amount = 12
+enable-extensions=G
+ignore =
+  E203
+  W503
+  W504
+  W606
+  C901
+exclude = ENV

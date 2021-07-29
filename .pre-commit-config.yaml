@@ -1,0 +1,19 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: debug-statements
+      - id: detect-private-key
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+        types: [text]
+      - id: mixed-line-ending
+      - id: check-executables-have-shebangs
+      - id: check-yaml
+      - id: check-added-large-files
+
+  - repo: https://github.com/PyCQA/flake8
+    rev: 3.9.2
+    hooks:
+      - id: flake8
