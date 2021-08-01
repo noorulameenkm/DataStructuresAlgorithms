@@ -2,3 +2,4 @@
 *.json
 *.py~
 *.class
+.DS_Store
