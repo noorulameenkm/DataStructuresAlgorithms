@@ -2,6 +2,8 @@
  Problem Link:- https://leetcode.com/problems/palindrome-partitioning-ii/
 """
 
+from functools import lru_cache
+
 
 def palindrome_partitioning_2(s):
     dp = build_matrix(s)
@@ -38,3 +40,30 @@ def build_matrix(string):
 
 print(palindrome_partitioning_2(s="aab"))
 print(palindrome_partitioning_2(s="ab"))
+
+
+def palindrome(string):
+    return string == string[::-1]
+
+
+def palindrome_partitioning_2_recursive(s):
+    n = len(s)
+
+    @lru_cache(None)
+    def recursive(start):
+        if start >= n:
+            return 0
+
+        min_cuts = float('inf')
+        for end in range(start + 1, n + 1):
+            if palindrome(s[start: end]):
+                cuts = 1 + recursive(end)
+                min_cuts = min(min_cuts, cuts)
+
+        return min_cuts
+
+    return recursive(0) - 1
+
+
+print(palindrome_partitioning_2_recursive(s="aab"))
+print(palindrome_partitioning_2_recursive(s="ab"))
