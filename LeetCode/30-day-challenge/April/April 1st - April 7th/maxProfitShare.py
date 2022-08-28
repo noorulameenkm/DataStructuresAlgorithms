@@ -1,3 +1,4 @@
+from math import inf
 class Solution:
     def maxProfit(self, prices):
         profit = 0
@@ -32,7 +33,19 @@ class Solution:
             
         return profit
         
-        
+
+def maxProfit(prices):
+    min_ = inf
+    profit = -inf
+    for price in prices:
+        min_ = min(min_, price)
+
+        if price - min_ > profit:
+            profit = price - min_
+
+    return profit
+
             
 print(f'The Max Profit is {Solution().maxProfit([7,1,5,3,6,4])}')   
+print(f'The Max Profit is {maxProfit([7,1,5,3,6,4])}')
         

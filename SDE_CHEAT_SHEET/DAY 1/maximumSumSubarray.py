@@ -49,6 +49,11 @@ def maximum_sum_subarray4(nums):
     
     return max_
 
+
+"""
+    Time Complexity - O(n)
+    Time Complexity - O(1)
+"""
 def find_max_sum_subarray_5(lst): 
   if (len(lst) < 1): 
     return 0
