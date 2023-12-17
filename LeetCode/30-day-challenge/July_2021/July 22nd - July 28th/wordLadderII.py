@@ -63,6 +63,53 @@ def word_ladder_2(beginWord, endWord, wordList):
     return paths
 
 
+class Solution:
+    def findSequences(self, startWord, targetWord, wordList):
+        
+        ans = []
+        queue = []
+        removeSet = set()
+        dictionary = set(wordList)
+        queue.append([startWord])
+        removeSet.add(startWord)
+        level = 0
+        
+        while queue:
+            words = queue.pop(0)
+            
+            if len(words) > level:
+                level += 1
+                for removeWord in removeSet:
+                    if removeWord in dictionary:
+                        dictionary.remove(removeWord)
+                
+                removeSet = set()
+            
+            currentWord = words[-1]
+            if currentWord == targetWord:
+                if len(ans) == 0 or len(ans[0]) == len(words):
+                    ans.append(list(words))
+                
+                continue
+            
+            for i in range(len(currentWord)):
+                currentTemp = list(currentWord)
+                for asci in range(97, 123):
+                    currentTemp[i] = chr(asci)
+                    
+                    if "".join(currentTemp) in dictionary:
+                        newWords = list(words)
+                        newWords.append("".join(currentTemp))
+                        queue.append(newWords)
+                        removeSet.add(newWords[-1])
+        
+        return ans
+
+
 
 print(word_ladder_2(beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log","cog"]))
 print(word_ladder_2(beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log"]))
+
+
+print(Solution().findSequences("hit", "cog", ["hot","dot","dog","lot","log","cog"]))
+print(Solution().findSequences("hit", "cog", ["hot","dot","dog","lot","log"]))

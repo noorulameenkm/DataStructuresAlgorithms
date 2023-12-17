@@ -83,6 +83,44 @@ def word_ladder_2(beginWord, endWord, wordList):
     return 0
                 
 
+class Solution:
+    # @param A : string
+    # @param B : string
+    # @param C : list of strings
+    # @return an integer
+    def solve(self, A, B, C):
+        words_set = set(C)
+        
+        if B not in words_set:
+            return 0
+        
+        queue = [(A, 1)]
+        if A in words_set:
+            words_set.remove(A)
+        while queue:
+            word, count = queue.pop(0)
+            if word == B:
+                return count
+            
+            for i in range(len(word)):
+                temp_word = list(word)
+                for char_ in range(97, 123):
+                    temp_word[i] = chr(char_)
+                    lookup_word = ''.join(temp_word)
+                    
+                    if lookup_word == word:
+                        continue
+                    
+                    if lookup_word == B:
+                        return count + 1
+                    
+                    if lookup_word in words_set: 
+                        queue.append((lookup_word, count + 1))
+                        words_set.remove(lookup_word)
+                        
+            
+        return 0
+
 
 
 # First Approach
@@ -93,3 +131,7 @@ print(word_ladder(beginWord = "hit", endWord = "cog", wordList = ["hot","dot","d
 # Second Approach
 print(word_ladder_2(beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log","cog"]))
 print(word_ladder_2(beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log"]))
+
+# third solution
+print(Solution().solve(A = "hit", B = "cog", C = ["hot","dot","dog","lot","log","cog"]))
+print(Solution().solve(A = "hit", B = "cog", C = ["hot","dot","dog","lot","log"]))
