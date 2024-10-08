@@ -3,3 +3,6 @@
 *.py~
 *.class
 .DS_Store
+*.xml
+*.iml
+out/
