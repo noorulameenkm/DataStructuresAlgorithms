@@ -3,6 +3,8 @@ import java.util.HashMap;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.List;
+import java.util.stream.IntStream;
+import java.util.stream.Collectors;
 
 record Input(int[] hand, int groupSize) {}
 
@@ -18,6 +20,7 @@ class HandOfStraights {
         }
 
         Queue<Integer> pq = new PriorityQueue<>();
+        pq.addAll(IntStream.range(0, 10).collect(Collectors.toList()));
         pq.addAll(frequency.keySet());
         int size = pq.size();
         while(size > 0) {

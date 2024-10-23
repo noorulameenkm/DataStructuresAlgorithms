@@ -17,7 +17,14 @@ def backspace_compare(str1, str2):
     index1 = i1 - 1
     index2 = i2 - 1
 
-  return True
+  if index1 < 0 and index2 < 0:
+    return True
+
+  if index1 < 0:
+    return get_next_valid_char(str2, index2) == -1
+
+  if index2 < 0:
+    return get_next_valid_char(str1, index1) == -1
 
 
 
@@ -42,6 +49,8 @@ def main():
   print(backspace_compare("xy#z", "xyz#"))
   print(backspace_compare("xp#", "xyz##"))
   print(backspace_compare("xywrrmp", "xywrrmu#p"))
+  print(backspace_compare("abc###", ""))
+  print(backspace_compare("ac##b", "b"))
 
 
 main()
