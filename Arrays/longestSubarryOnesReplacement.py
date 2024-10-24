@@ -1,5 +1,5 @@
+# Pattern:- Sliding Window
 def length_of_longest_substring(arr, k):
-  # TODO: Write your code here
   maxLength, start, ones = 0, 0, 0
   for end in range(len(arr)):
     num = arr[end]
