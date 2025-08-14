@@ -7,7 +7,6 @@ public class BalancedParanthesisAfterEditing {
         if(s.length() % 2 != 0) return false;
 
         for(int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
 
             if(locked.charAt(i) == '0') {
                 openAndClose.push(i);
